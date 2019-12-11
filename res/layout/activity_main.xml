@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".MainActivity" >
+
+    <ListView
+        android:id="@+id/lv_musics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" 
+        android:layout_above="@+id/rl_music_info">
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/rl_music_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_buttons"
+        >
+        
+        <TextView
+            android:id="@+id/tv_music_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正在播放:" 
+            android:layout_alignParentTop="true"
+            android:textSize="16sp"/>
+        
+        <SeekBar
+            android:id="@+id/sb_music_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_music_title"
+            android:max="100" />
+        
+        <TextView
+            android:id="@+id/tv_music_current_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00" 
+            android:layout_below="@+id/sb_music_progress"
+            android:layout_alignParentLeft="true"
+            android:textSize="12sp"/>
+        
+        <TextView
+            android:id="@+id/tv_music_duration"
+            android:layout_below="@+id/sb_music_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00" 
+            android:layout_alignParentRight="true"
+            android:textSize="12sp"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        
+        <ImageButton
+            android:id="@+id/ib_play_or_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@android:drawable/ic_media_play" 
+            />
+
+        <ImageButton
+            android:id="@+id/ib_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ib_play_or_pause"
+            android:layout_toRightOf="@+id/ib_play_or_pause"
+            android:src="@android:drawable/ic_media_next" />
+
+        <ImageButton
+            android:id="@+id/ib_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ib_play_or_pause"
+            android:layout_toLeftOf="@+id/ib_play_or_pause"
+            android:src="@android:drawable/ic_media_previous" />
+        
+    </RelativeLayout>
+
+</RelativeLayout>
